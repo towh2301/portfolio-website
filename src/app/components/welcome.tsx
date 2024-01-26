@@ -15,15 +15,15 @@ export const Welcome = () => {
                                 Hello I’am{" "}
                             </div>
                             <div className="text-primary-black text-left font-displaytext-extra-bold-font-family text-displaytext-extra-bold-font-size leading-displaytext-extra-bold-line-height font-displaytext-extra-bold-font-weight relative">
-                                Evren Shah.{" "}
+                                Huy Hoang.{" "}
                             </div>
                         </div>
                         <div className="flex flex-row gap-4 items-start justify-start shrink-0 relative">
                             <div className="text-primary-black text-left font-displaytext-extra-bold-font-family text-displaytext-extra-bold-font-size leading-displaytext-extra-bold-line-height font-displaytext-extra-bold-font-weight relative">
-                                Frontend{" "}
+                                SE student{" "}
                             </div>
                             <div className="text-left font-outlined-extra-bold-font-family text-outlined-extra-bold-font-size leading-outlined-extra-bold-line-height font-outlined-extra-bold-font-weight relative">
-                                Developer{" "}
+                                {" "}
                             </div>
                         </div>
                         <div className="flex flex-row gap-4 items-start justify-start shrink-0 relative">
@@ -31,16 +31,16 @@ export const Welcome = () => {
                                 Based In{" "}
                             </div>
                             <div className="text-primary-black text-left font-displaytext-extra-bold-font-family text-displaytext-extra-bold-font-size leading-displaytext-extra-bold-line-height font-displaytext-extra-bold-font-weight relative">
-                                India.{" "}
+                                Vietnam.{" "}
                             </div>
                         </div>
                     </div>
                     <div className="text-zinc-500 text-left font-paragraph-p-2-regular-font-family text-paragraph-p-2-regular-font-size leading-paragraph-p-2-regular-line-height font-paragraph-p-2-regular-font-weight relative self-stretch">
-                        I&#039;m Evren Shah Lorem Ipsum is simply dummy text of
-                        the printing and typesetting industry. Lorem Ipsum has
-                        been the industry&#039;s standard dummy text ever since
-                        the 1500s, when an unknown printer took a galley of type
-                        and scrambled it to specimen book.{" "}
+                        I&#039;m Huy Bui Hoang, I'm currently study Software
+                        Engineering in Vietnam. I make this profile is for
+                        introducing myself and practicing new technology as
+                        well. Hope you find some interested in my portfolio
+                        website.{" "}
                     </div>
                 </div>
             </div>
