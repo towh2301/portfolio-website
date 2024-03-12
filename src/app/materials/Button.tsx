@@ -1,6 +1,4 @@
 import React from "react";
-import { Inter } from "next/font/google";
-import { randomFill, randomFillSync } from "crypto";
 
 interface ButtonProps {
     children: React.ReactNode;
