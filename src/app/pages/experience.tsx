@@ -10,7 +10,7 @@ const company = [
         duration: "Nov 2022 - Present",
         description:
             "I am currently working as a student developer at Eastern International University. I am responsible for developing and maintaining the university's website and web applications. I also work on various projects to improve the university's digital presence and user experience.",
-        icon: "https://cdn.iconscout.com/icon/free/png-512/free-big-44-283543.png?f=webp&w=256",
+        icon: "https://cdn.iconscout.com/icon/free/png-512/free-big-44-283543.png?f=webp&w=256"
     },
     {
         title: "Business Development Intern",
@@ -18,7 +18,7 @@ const company = [
         duration: "Nov 2020 - 2022",
         description:
             "I am currently working as a student developer at Eastern International University. I am responsible for developing and maintaining the university's website and web applications. I also work on various projects to improve the university's digital presence and user experience.",
-        icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
     },
     {
         title: "Internship Program for IT Students",
@@ -26,8 +26,8 @@ const company = [
         duration: "Nov 2019 - 2020",
         description:
             "I am currently working as a student developer at Eastern International University. I am responsible for developing and maintaining the university's website and web applications. I also work on various projects to improve the university's digital presence and user experience.",
-        icon: "https://cdn-icons-png.flaticon.com/512/6557/6557077.png",
-    },
+        icon: "https://cdn-icons-png.flaticon.com/512/6557/6557077.png"
+    }
 ];
 
 export default function Experience() {
@@ -38,7 +38,10 @@ export default function Experience() {
             </div>
             <div className="w-full h-auto p-1 md:p-8 flex-row">
                 {company.map((item, index) => (
-                    <div className=" w-full h-auto p-8 border-blue-50 rounded-md border-2 mb-8 ">
+                    <div
+                        key={index}
+                        className=" w-full h-auto p-8 border-blue-50 rounded-md border-2 mb-8 "
+                    >
                         <div className="w-full h-auto grid md:grid-cols-2 gap-3 mb-3">
                             <div className="w-full flex py-auto place-items-center ">
                                 <img
