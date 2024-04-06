@@ -83,7 +83,7 @@ export default function Contact() {
                         work with people who share the same passion and vision
                         as me.
                     </div>
-                    <div className="self-stretch text-black text-xl md:text-3xl font-semibold font-['sora'] leading-loose">
+                    <div className="self-stretch text-black text-sm md:text-3xl font-semibold font-['sora']">
                         huy.buihoang2301@gmail.com
                     </div>
                 </div>
