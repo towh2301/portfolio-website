@@ -3,7 +3,7 @@ import React from "react";
 const sora = Sora({ subsets: ["latin"] });
 export default function Welcome() {
     return (
-        <div className="px-8 py-0 flex items-center justify-center justify-items-center">
+        <div className="pt-5 px-6 flex items-center justify-center justify-items-center">
             <div className="w-full md:w-3/4 h-80 flex-col justify-center items-center gap-14 inline-flex text-center">
                 <div className="self-stretch h-14 flex-col justify-center items-center flex text-3xl md:text-5xl ">
                     <div className="justify-between items-start gap-4 font-['sora']">

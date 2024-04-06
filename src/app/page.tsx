@@ -9,6 +9,7 @@ import Project from "./pages/project";
 import { useRef } from "react";
 import Button from "./components/Button";
 import Link from "next/link";
+import Contact from "./pages/contact";
 
 const sora = Sora({ subsets: ["latin"] });
 
@@ -19,7 +20,7 @@ export default function Home() {
         setMenuOpen(!menuOpen);
     };
 
-    // Create a reference to scroll to section
+    // Create a references to scroll to section
     const about = useRef<HTMLDivElement | null>(null);
     const projects = useRef<HTMLDivElement | null>(null);
     const skills = useRef<HTMLDivElement | null>(null);
@@ -48,14 +49,14 @@ export default function Home() {
         }
     ];
 
-    // Hàm để cuộn đến section
+    // Function to scroll to section
     const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
         if (ref.current) {
             ref.current.scrollIntoView({ behavior: "smooth" });
         }
     };
     return (
-        <div className=" w-full ">
+        <body className=" w-full ">
             <header className="header py-3 flex items-center justify-center md:px-20 lg:px-20  sticky top-0 bg-white z-10 shadow-xl">
                 <nav className="px-8 py-0 w-full md:flex justify-between items-center">
                     <div className="logo gap-3 flex items-center justify-between">
@@ -166,13 +167,13 @@ export default function Home() {
             </header>
             <section
                 ref={about}
-                className="w-full welcome py-[110px] flex items-center md:px-20 lg:px-20"
+                className="w-full welcome py-[110px] flex items-center md:px-20"
             >
                 <Welcome />
             </section>
             <section
                 ref={skills}
-                className="skills flex items-center justify-start overflow-hidden md:px-20 lg:px-20"
+                className="skills flex items-center justify-start overflow-hidden md:px-20 lg:px-20 pt-24"
             >
                 <Skills />
             </section>
@@ -181,10 +182,26 @@ export default function Home() {
             </section>
             <section
                 ref={projects}
-                className="projects w-full welcome py-[110px] flex items-center md:px-20 lg:px-20"
+                className="projects w-full py-[110px] flex items-center md:px-20 lg:px-20 relative"
             >
                 <Project />
             </section>
-        </div>
+            <section
+                ref={contact}
+                className="contact w-full pb-[110px] pt-6 flex items-center md:px-20 lg:px-20 relative"
+            >
+                <Contact />
+            </section>
+            <footer className="w-full h-20 px-8 md:px-28 text-lg md:text-2xl bg-black justify-between  items-center inline-flex gap-5">
+                <div className="w-full h-12  justify-between items-center flex">
+                    <div className="w-full justify-start text-left text-white text-base font-semibold leading-tight ">
+                        Made In Figma
+                    </div>
+                    <div className="w-full justify-end items-center text-left  text-base flex-nowrap flex text-white font-bold leading-tight">
+                        Personal © 2024
+                    </div>
+                </div>
+            </footer>
+        </body>
     );
 }
