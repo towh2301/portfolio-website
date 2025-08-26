@@ -1,8 +1,50 @@
 import { url } from "inspector";
 import { Sora } from "next/font/google";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Toast from "../components/Toast";
 const sora = Sora({ subsets: ["latin"] });
 export default function Welcome() {
+	const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+	const copyToClipboard: React.FC<any> = ({ isVisible, message }: any) => {
+		if (!isVisible) return null;
+
+		return (
+			<div
+				style={{
+					position: "fixed",
+					bottom: "20px",
+					right: "20px",
+					backgroundColor: "green",
+					color: "white",
+					padding: "10px 15px",
+					borderRadius: "5px",
+					zIndex: 1000,
+				}}
+			>
+				{message}
+			</div>
+		);
+	};
+
+	const handleCopyAndNotify = async (text: string) => {
+		try {
+			await navigator.clipboard.writeText(text);
+			setToastMessage("Copied to clipboard!");
+			return;
+		} catch (err) {
+			console.error("Failed to copy text: ", err);
+		}
+	};
+
+	// auto-hide toast after 1.5s
+	useEffect(() => {
+		if (toastMessage) {
+			const timer = setTimeout(() => setToastMessage(null), 1500);
+			return () => clearTimeout(timer);
+		}
+	}, [toastMessage]);
+
 	const contact_icons = [
 		{
 			name: "Phone",
@@ -61,8 +103,9 @@ export default function Welcome() {
 						<div
 							className="w-14 h-14 p-4 border-2 border-black rounded justify-center items-center gap-2 flex"
 							key={index}
-							onClick={() => {
+							onClick={async () => {
 								if (icon.name !== "Github") {
+									await handleCopyAndNotify(icon.url);
 								} else {
 									location.href = icon.url;
 								}
@@ -79,8 +122,10 @@ export default function Welcome() {
 							</div>
 						</div>
 					))}
+					{/* Toast (only one instance, fixed position) */}
 				</div>
 			</div>
+			{toastMessage && <Toast message={toastMessage} duration={1500} />}
 		</div>
 	);
 }
