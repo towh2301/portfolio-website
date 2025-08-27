@@ -5,7 +5,7 @@ const sora = Sora({ subsets: ["latin"] });
 
 const company = [
 	{
-		title: "IT Staff Intern",
+		title: "IT Staff",
 		company: "TOIN",
 		duration: "July 2025 - September 2025",
 		description:
