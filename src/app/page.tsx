@@ -147,7 +147,7 @@ export default function Home() {
 						}`}
 					>
 						<a
-							href="/assets/docs/cv_buihoanghuy.pdf"
+							href="/assets/docs/cv.pdf"
 							download="CV_BuiHoangHuy.pdf"
 							className="inline-block transition-transform duration-200 hover:scale-105"
 						>
