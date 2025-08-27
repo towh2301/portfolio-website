@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import { Sora } from "next/font/google";
 
 const sora = Sora({ subsets: ["latin"] });
@@ -23,16 +24,43 @@ const company = [
 ];
 
 export default function Experience() {
+	useEffect(() => {
+		if (typeof window === "undefined") return;
+		const reveals = document.querySelectorAll<HTMLElement>(".reveal");
+		if (!("IntersectionObserver" in window)) {
+			// fallback: just make them visible
+			reveals.forEach((el) => el.classList.add("is-visible"));
+			return;
+		}
+
+		const obs = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("is-visible");
+						// unobserve after visible to avoid repeated triggers
+						obs.unobserve(entry.target);
+					}
+				});
+			},
+			{ threshold: 0.12 }
+		);
+
+		reveals.forEach((el) => obs.observe(el));
+		return () => obs.disconnect();
+	}, []);
+
 	return (
 		<div className="text-white gap-5  p-4 md:px-20">
-			<div className=" pt-5 pb-2 lg:pb-8 w-full font-sora text-3xl md:text-5xl text-center font-['Sora'] items-center mb-7">
+			<div className=" pt-5 pb-2 lg:pb-8 w-full font-sora text-3xl md:text-5xl text-center font-['Sora'] items-center mb-7 page-title reveal">
 				My <span className=" font-extrabold">Experience</span>
 			</div>
 			<div className="w-full h-auto p-1 md:p-8 flex-row">
 				{company.map((item, index) => (
 					<div
 						key={index}
-						className=" w-full h-auto p-8 border-blue-50 rounded-md border-2 mb-8 "
+						// 'reveal' will animate when element enters viewport; 'card' adds hover lift and shadow
+						className="reveal card w-full h-auto p-8 border-blue-50 rounded-md border-2 mb-8 bg-transparent"
 					>
 						<div className="w-full h-auto grid md:grid-cols-2 gap-3 mb-3">
 							<div className="w-full flex py-auto place-items-center ">
