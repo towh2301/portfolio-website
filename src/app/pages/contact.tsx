@@ -37,11 +37,18 @@ export default function Contact() {
 
 	return (
 		<div className="w-full gap-5 px-8 pt-14">
-			<div className="mb-14 pt-5 pb-2 w-full text-3xl md:text-5xl text-center font-sora">
+			<div
+				className="mb-14 pt-5 pb-2 w-full text-3xl md:text-5xl text-center font-sora page-title reveal"
+				style={{ transitionDelay: "30ms" }}
+			>
 				My <span className="text-black font-extrabold">Contact</span>
 			</div>
-			<div className="w-full flex-row md:flex gap-10 items-center justify-center">
-				<div className="md:inline-flex grid gap-10">
+			<div className="w-full flex-col md:flex md:flex-row gap-10 items-start justify-center">
+				<div
+					className="md:inline-flex grid gap-10 reveal card"
+					tabIndex={0}
+					style={{ transitionDelay: "70ms" }}
+				>
 					<form
 						onSubmit={handleSubmit}
 						className="w-max flex-col justify-start items-start gap-5 flex"
@@ -92,7 +99,11 @@ export default function Contact() {
 						)}
 					</form>
 				</div>
-				<div className="w-full py-5 flex-col gap-6 flex text-justify">
+				<div
+					className="w-full py-5 flex-col gap-6 flex text-justify reveal card"
+					tabIndex={0}
+					style={{ transitionDelay: "130ms" }}
+				>
 					<div className="text-3xl md:text-4xl font-extrabold">
 						Let’s talk for
 					</div>

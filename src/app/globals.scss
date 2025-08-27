@@ -14,16 +14,9 @@
 	transform: translateY(0) scale(1);
 }
 
-/* Card hover: lift + shadow */
+/* Card: preserve semantic container for reveal — remove hover/focus lift so animations only run on reveal */
 .card {
-	will-change: transform;
-	transition: transform 220ms ease, box-shadow 220ms ease;
-}
-.card:hover,
-.card:focus-within {
-	transform: translateY(-6px) scale(1.006);
-	box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6), 0 2px 6px rgba(2, 6, 23, 0.4);
-	border-color: rgba(59, 130, 246, 0.25); /* subtle blue accent */
+	/* intentionally minimal: visual behavior is controlled by .reveal and .reveal.is-visible */
 }
 
 /* Animated underline for page titles */
@@ -44,8 +37,6 @@
 	border-radius: 2px;
 	opacity: 0.95;
 }
-.page-title:hover::after,
-.page-title:focus-within::after,
 .page-title.is-visible::after {
 	transform: translateX(-50%) scaleX(1);
 }

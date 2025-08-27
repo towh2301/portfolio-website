@@ -65,9 +65,16 @@ export default function Welcome() {
 
 	return (
 		<div className="w-full pt-5 px-6 flex items-center justify-center justify-items-center">
-			<div className="w-full md:w-3/4 h-80 flex-col justify-center items-center gap-14 inline-flex text-center">
+			<div
+				className="w-full md:w-3/4 h-80 flex-col justify-center items-center gap-14 inline-flex text-center reveal card"
+				tabIndex={0}
+				style={{ transitionDelay: "40ms" }}
+			>
 				<div className="self-stretch h-14 flex-col justify-center items-center flex text-3xl md:text-5xl ">
-					<div className="justify-between items-start gap-4 font-['sora']">
+					<div
+						className="justify-between items-start gap-4 font-['sora'] page-title reveal"
+						style={{ transitionDelay: "20ms" }}
+					>
 						<span className="text-black  font-normal leading-tight justify-between content-between">
 							Hello I’am{" "}
 						</span>

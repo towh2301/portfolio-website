@@ -68,12 +68,20 @@ const projects = [
 export default function Project() {
 	return (
 		<div className="w-full px-2 gap-5">
-			<div className="pt-5 pb-2 lg:pb-8 w-full font-sora text-3xl md:text-5xl text-center font-['Sora']">
+			<div
+				className="pt-5 pb-2 lg:pb-8 w-full font-sora text-3xl md:text-5xl text-center font-['Sora'] page-title reveal"
+				style={{ transitionDelay: "30ms" }}
+			>
 				My <span className="text-black font-extrabold">Projects</span>
 			</div>
 			<div className="w-full justify-center items-center gap-14 p-5">
 				{projects.map((project, index) => (
-					<div key={index}>
+					<div
+						key={index}
+						className="reveal card"
+						tabIndex={0}
+						style={{ transitionDelay: `${index * 80}ms` }}
+					>
 						{index % 2 === 0 ? (
 							<div className="w-full py-10 md:flex gap-10 lg:flex justify-center items-center grid">
 								<Image

@@ -44,15 +44,20 @@ export const skills_list = [
 export default function Skills() {
 	return (
 		<div className="w-full px-8 gap-5">
-			<div className="pt-5 pb-2 lg:pb-8 w-full font-sora text-3xl md:text-5xl text-center font-['Sora'] items-center">
+			<div
+				className="pt-5 pb-2 lg:pb-8 w-full font-sora text-3xl md:text-5xl text-center font-['Sora'] items-center page-title reveal"
+				style={{ transitionDelay: "30ms" }}
+			>
 				My <span className="text-black font-extrabold">Skills</span>
 			</div>
 
 			<div className="py-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
 				{skills_list.map((skill, index) => (
 					<div
-						className="flex justify-center items-center"
+						className="flex justify-center items-center reveal card"
 						key={index}
+						tabIndex={0}
+						style={{ transitionDelay: `${index * 40}ms` }}
 					>
 						<div className="w-32 h-32 sm:w-48 sm:h-48 p-4 bg-white rounded border-2 border-black flex flex-col justify-center items-center gap-4">
 							<div className="w-12 h-12 sm:w-14 sm:h-14 relative">

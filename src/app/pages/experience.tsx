@@ -55,22 +55,24 @@ export default function Experience() {
 			<div className=" pt-5 pb-2 lg:pb-8 w-full font-sora text-3xl md:text-5xl text-center font-['Sora'] items-center mb-7 page-title reveal">
 				My <span className=" font-extrabold">Experience</span>
 			</div>
-			<div className="w-full h-auto p-1 md:p-8 flex-row">
+			<div className="w-full h-auto p-1 md:p-8 flex flex-col gap-4">
 				{company.map((item, index) => (
 					<div
 						key={index}
 						// 'reveal' will animate when element enters viewport; 'card' adds hover lift and shadow
-						className="reveal card w-full h-auto p-8 border-blue-50 rounded-md border-2 mb-8 bg-transparent"
+						className="reveal card w-full h-auto p-8 border-blue-50 rounded-md border-2 mb-0 bg-transparent"
+						tabIndex={0}
+						style={{ transitionDelay: `${index * 70}ms` }}
 					>
 						<div className="w-full h-auto grid md:grid-cols-2 gap-3 mb-3">
-							<div className="w-full flex py-auto place-items-center ">
+							<div className="w-full flex items-center py-2">
 								<img
 									src={item.icon}
 									alt={item.company}
-									className="w-10 h-auto mr-4 rounded-md"
+									className="w-12 h-12 object-cover mr-4 rounded-md bg-zinc-800/30"
 								/>
 
-								<div className="w-full flex text-start text-white text-lg md:text-2xl font-semibold font-['Sora'] leading-7 item-center align-middle">
+								<div className="w-full text-start text-white text-lg md:text-2xl font-semibold font-['Sora'] leading-7 items-center align-middle">
 									{item.title}
 								</div>
 							</div>
