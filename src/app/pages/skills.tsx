@@ -59,7 +59,7 @@ export default function Skills() {
 								<img
 									src={skill.src}
 									alt={skill.name}
-									className="w-full h-full object-contain"
+									className="w-full h-full object-contain rounded-md"
 								/>
 							</div>
 							<div className="text-center text-black text-lg font-bold font-sans capitalize leading-normal">

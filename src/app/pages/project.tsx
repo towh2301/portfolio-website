@@ -1,87 +1,147 @@
 "use client";
-import { useRef } from "react";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 
 const projects = [
-    {
-        title: "Markdown Note Taking Application",
-        description:
-            "I have developed a markdown note-taking application using React and Tailwind CSS. The application allows users to create, edit, and delete notes. It also supports markdown syntax highlighting and live preview. The application is responsive and works on all devices. I have also implemented a dark mode feature using local storage. The application is hosted on Vercel and the source code is available on GitHub.",
-        image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        title: "Portfolio Website",
-        description:
-            "I have developed a portfolio website using Next.js and Tailwind CSS. The website showcases my projects, skills, and experience. It also includes a blog section where I write about web development and programming. The website is responsive and works on all devices. I have also implemented a dark mode feature using local storage. The website is hosted on Vercel and the source code is available on GitHub.",
-        image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        title: "E-commerce Website",
-        description:
-            "I have developed an e-commerce website using React, Redux, and Tailwind CSS. The website allows users to browse products, add them to the cart, and checkout. It also includes a search feature and a product filter. The website is responsive and works on all devices. I have also implemented a dark mode feature using local storage. The website is hosted on Vercel and the source code is available on GitHub.",
-        image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    }
+	{
+		title: "Integrated Education System",
+		description:
+			"Developed backend services to support a multi-user educational platform for students, teachers, and admins. Designed and implemented REST APIs for user management, course handling, and notifications. Built modular microservices including Identity, Profile, Course, and Notification services. Managed authentication and authorization using Spring Security and JWT. Tech stack: Spring Boot 3, MongoDB, MySQL, ReactJS, React Native.",
+		image: "/assets/educational.png",
+		github: [
+			{
+				label: "Course Service",
+				url: "https://github.com/towh2301/course-service",
+			},
+			{
+				label: "Identity Service",
+				url: "https://github.com/towh2301/identity-svc",
+			},
+			{
+				label: "Profile Service",
+				url: "https://github.com/towh2301/profile-service",
+			},
+			{
+				label: "Frontend",
+				url: "https://github.com/towh2301/Shadcn-system",
+			},
+		],
+	},
+	{
+		title: "Mobile E-Commerce Application",
+		description:
+			"Built a mobile e-commerce application using React Native and MySQL. Implemented validation with Zod, API integration with Axios and TanStack Query, and state management with Zustand. Focused on responsive UI and smooth shopping experience.",
+		image: "/assets/mobile.jpg",
+		github: [
+			{
+				label: "GitHub",
+				url: "https://github.com/towh2301/CSE441_Ecommerce",
+			},
+		],
+	},
+	{
+		title: "Food Ordering System",
+		description:
+			"Developed a restaurant food ordering backend using Django and MySQL. Implemented order and cart management logic, CRUD functionality, relational database schemas, and server-side logic consumed by the frontend.",
+		image: "/assets/food.jpg",
+		github: [
+			{
+				label: "GitHub",
+				url: "https://github.com/towh2301/ecommerce-web",
+			},
+		],
+	},
+	{
+		title: "Mobile Markdown Note Taking Application",
+		description:
+			"Developed a note-taking application using Markdown for Mobile. Using Markdown and preview simultaneously gives users a exiting experience, enhance productivity, especially IT students who have to use Markdown every project. This app use Flutter framework with Dart to create a simple note taking app. ",
+		image: "https://simplenote.com/wp-content/uploads/2016/08/markdown-ios.jpg",
+		github: [
+			{
+				label: "GitHub",
+				url: "https://github.com/towh2301/note_app",
+			},
+		],
+	},
 ];
 
 export default function Project() {
-    return (
-        <div className="w-full px-2 gap-5">
-            <div className="pt-5 pb-2 lg:pb-8 w-full font-sora text-3xl md:text-5xl text-center font-['Sora'] items-center">
-                My <span className="text-black font-extrabold">Projects</span>
-            </div>
-            <div className="w-full justify-center items-center gap-14 p-5 ">
-                {projects.map((project, index) => (
-                    <div key={index}>
-                        {index % 2 === 0 ? (
-                            <div className="w-full py-10 md:flex gap-10 lg:flex justify-center items-center grid">
-                                <Image
-                                    src={project.image} // Enter your image URL here
-                                    alt="Picture of something"
-                                    width={450} // Desired width
-                                    height={350}
-                                    className="rounded-2xl"
-                                />
-                                <div className="gird gap-10 h-full w-full">
-                                    <div className="font-bold text-[40px]">
-                                        0{index + 1}
-                                    </div>
-                                    <div className="font-bold text-[20px] mb-3 ">
-                                        {project.title}
-                                    </div>
-                                    <div className=" text-zinc-500  font-normal font-['Sora'] leading-6 tracking-tight justify-center items-center text-justify">
-                                        {project.description}
-                                    </div>
-                                </div>
-                            </div>
-                        ) : (
-                            <div
-                                key={index}
-                                className="w-full py-10 gap-10 md:flex lg:flex justify-center items-center text-right grid"
-                            >
-                                <div className="gird gap-10 h-full w-full">
-                                    <div className="font-bold text-[40px]">
-                                        0{index + 1}
-                                    </div>
-                                    <div className="font-bold text-[20px] mb-3">
-                                        {project.title}
-                                    </div>
-                                    <div className=" text-zinc-500  font-normal font-['Sora'] leading-6 tracking-tight justify-center items-center text-justify">
-                                        {project.description}
-                                    </div>
-                                </div>
-                                <Image
-                                    src={project.image} // Enter your image URL here
-                                    alt="Picture of something"
-                                    width={450} // Desired width
-                                    height={350}
-                                    className="rounded-2xl"
-                                />
-                            </div>
-                        )}
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+	return (
+		<div className="w-full px-2 gap-5">
+			<div className="pt-5 pb-2 lg:pb-8 w-full font-sora text-3xl md:text-5xl text-center font-['Sora']">
+				My <span className="text-black font-extrabold">Projects</span>
+			</div>
+			<div className="w-full justify-center items-center gap-14 p-5">
+				{projects.map((project, index) => (
+					<div key={index}>
+						{index % 2 === 0 ? (
+							<div className="w-full py-10 md:flex gap-10 lg:flex justify-center items-center grid">
+								<Image
+									src={project.image}
+									alt={project.title}
+									width={450}
+									height={350}
+									className="rounded-2xl"
+								/>
+								<div className="grid gap-6 h-full w-full">
+									<div className="font-bold text-[30px]">
+										0{index + 1}. {project.title}
+									</div>
+									<div className="text-zinc-500 font-normal font-['Sora'] leading-6 tracking-tight text-justify">
+										{project.description}
+									</div>
+									{project.github.length > 0 && (
+										<div className="flex gap-4 flex-wrap mt-2 ">
+											{project.github.map((repo, i) => (
+												<a
+													key={i}
+													href={repo.url}
+													target="_blank"
+													className="text-white bg-black rounded-md px-3 py-2 transition-transform duration-300 hover:scale-105"
+												>
+													{repo.label}
+												</a>
+											))}
+										</div>
+									)}
+								</div>
+							</div>
+						) : (
+							<div className="w-full py-10 gap-10 md:flex lg:flex justify-center items-center text-right grid">
+								<div className="grid gap-6 h-full w-full">
+									<div className="font-bold text-[30px]">
+										0{index + 1}. {project.title}
+									</div>
+									<div className="text-zinc-500 font-normal font-['Sora'] leading-6 tracking-tight text-justify">
+										{project.description}
+									</div>
+									{project.github.length > 0 && (
+										<div className="flex gap-4 flex-wrap mt-2 justify-end">
+											{project.github.map((repo, i) => (
+												<a
+													key={i}
+													href={repo.url}
+													target="_blank"
+													className="text-white bg-black rounded-md px-3 py-2 transition-transform duration-300 hover:scale-105"
+												>
+													{repo.label}
+												</a>
+											))}
+										</div>
+									)}
+								</div>
+								<Image
+									src={project.image}
+									alt={project.title}
+									width={450}
+									height={350}
+									className="rounded-2xl"
+								/>
+							</div>
+						)}
+					</div>
+				))}
+			</div>
+		</div>
+	);
 }

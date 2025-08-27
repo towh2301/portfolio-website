@@ -75,13 +75,13 @@ export default function Welcome() {
 							Bui Hoang Huy.{" "}
 						</span>
 						<span className="text-black  font-normal justify-between content-between">
-							I'm a{" "}
+							I'm Studying To Be A{" "}
 						</span>
 						<span className="text-black font-extrabold  ">
-							SE Student{" "}
+							Developer.{" "}
 						</span>
 						<span className="text-black  font-normal justify-between content-between">
-							Based In{" "}
+							I'm From{" "}
 						</span>
 						<span className="text-black  font-extrabold ">
 							Vietnam.
@@ -89,14 +89,16 @@ export default function Welcome() {
 					</div>
 				</div>
 				<div className="self-stretch text-zinc-500  font-normal font-['Sora'] leading-6 tracking-tight justify-center items-center text-justify">
-					I'm Bui Hoang Huy. I'm a CS student based in Vietnam. I love
-					to code and build things that live on the internet. I
-					develop exceptional websites and web apps that provide
-					intuitive, pixel-perfect user interfaces with efficient and
-					modern backends. I am a fast learner and I am always eager
-					to learn new technologies and frameworks. I am passionate
-					about building excellent software that improves the lives of
-					those around me.
+					I'm Bui Hoang Huy. I love to build things that live on the
+					internet. I develop exceptional websites and web apps that
+					provide intuitive, pixel-perfect user interfaces with
+					efficient and modern backends. I am always eager to learn
+					new technologies and frameworks. I am passionate about
+					building excellent software that improves the lives of those
+					around me. Eager to take on dynamic challenges, bringing
+					creativity, problem-solving skills, and an user-focused
+					mindset. Proven ability to manage projects effectively and
+					collaborate seamlessly within cross-functional teams.
 				</div>
 				<div className="w-full grid grid-cols-2 h-16 py-1 place-items-center justify-center items-center gap-8 md:inline-flex">
 					{contact_icons.map((icon, index) => (
